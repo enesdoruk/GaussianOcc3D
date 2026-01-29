@@ -1,5 +1,7 @@
 # GaussianOcc3D: A Gaussian-Based Adaptive Multi-modal 3D Occupancy Prediction
 
+### [**A. Enes Doruk**](https://github.com/enesdoruk) and [**Hasan F. Ates**](https://faculty.ozyegin.edu.tr/hfates/)
+
 Official implementation of **GaussianOcc3D**, a novel multi-modal framework that bridges camera semantics and LiDAR geometry through a memory-efficient, continuous 3D Gaussian representation.
 
 ---
