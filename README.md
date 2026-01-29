@@ -4,7 +4,7 @@ Official implementation of **GaussianOcc3D**, a novel multi-modal framework that
 
 ---
 
-## 📄 Abstract
+## Abstract
 
 3D semantic occupancy prediction is a pivotal task in autonomous driving, providing a dense and fine-grained understanding of the surrounding environment. While recent single-modality approaches have shown significant progress, they are inherently limited by the physical trade-offs between the semantic richness of cameras and the precise geometric manifolds of LiDAR. Multi-modal frameworks frequently encounter difficulties in managing modality heterogeneity and spatial misalignment, often resulting in the loss of critical semantic or geometric cues. These challenges are further compounded by a representation crisis: complex voxel-based models suffer from excessive computational demands due to processing empty space, while lightweight Bird's-Eye View (BEV) alternatives often rely on lossy compression that fails to accurately represent vertical structures.
 
@@ -20,7 +20,7 @@ Extensive evaluations on the Occ3D, SurroundOcc, and SemanticKITTI benchmarks de
 
 ## 🏗️ Framework Overview
 
-![GaussianOcc3D Architecture](overview.pdf)
+![GaussianOcc3D Architecture](overview.png)
 
 > **Figure 1:** The overall architecture of the proposed GaussianOcc3D framework. The pipeline extracts 2D features via a camera backbone and 3D geometric features via a sparse LiDAR backbone, lifting them into a shared Gaussian space for adaptive fusion and global refinement.
 
