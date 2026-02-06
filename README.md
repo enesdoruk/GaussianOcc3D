@@ -2,7 +2,11 @@
 
 ### [**A. Enes Doruk**](https://github.com/enesdoruk) and [**Hasan F. Ates**](https://faculty.ozyegin.edu.tr/hfates/)
 
-Official implementation of **GaussianOcc3D**, a novel multi-modal framework that bridges camera semantics and LiDAR geometry through a memory-efficient, continuous 3D Gaussian representation.
+[![arXiv](https://img.shields.io/badge/arXiv-2601.22729-b31b1b.svg)](https://arxiv.org/abs/2601.22729)
+
+Official implementation of **GaussianOcc3D**, a novel multi-modal framework that bridges camera semantics and LiDAR geometry through a memory-efficient, continuous 3D Gaussian representation. 
+
+For more details, please refer to our paper: **[GaussianOcc3D: A Gaussian-Based Adaptive Multi-modal 3D Occupancy Prediction](https://arxiv.org/abs/2601.22729)**.
 
 ---
 
@@ -43,3 +47,15 @@ Extensive evaluations on the Occ3D, SurroundOcc, and SemanticKITTI benchmarks de
 <br />
 
 ---
+
+## 📝 Citation
+
+If you find this work useful for your research, please cite our paper:
+
+```bibtex
+@article{doruk2026gaussianocc3d,
+  title={GaussianOcc3D: A Gaussian-Based Adaptive Multi-modal 3D Occupancy Prediction},
+  author={Doruk, A and Ates, Hasan F},
+  journal={arXiv preprint arXiv:2601.22729},
+  year={2026}
+}
