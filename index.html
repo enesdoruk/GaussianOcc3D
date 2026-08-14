@@ -32,12 +32,14 @@
       <div class="affiliation"><sup>1</sup> Ozyegin University, Istanbul, Turkiye</div>
 
       <div class="link-block">
-        <a class="paper-btn" href="paper.pdf" target="_blank">
-          <span class="icon"><i class="fa-solid fa-file-pdf"></i></span>
-          <span>Paper</span>
+        <!-- Replace # with the final arXiv URL when available -->
+        <a class="paper-btn placeholder-link" href="https://arxiv.org/abs/2601.22729" aria-label="ArXiv">
+          <span class="icon"><i class="fa-solid fa-file-lines"></i></span>
+          <span>ArXiv</span>
         </a>
 
-        <a class="paper-btn" href="https://github.com/USERNAME/GaussianOcc3D" target="_blank">
+        <!-- Replace USERNAME with your GitHub username -->
+        <a class="paper-btn" href="https://github.com/enesdoruk/GaussianOcc3D" target="_blank">
           <span class="icon"><i class="fa-brands fa-github"></i></span>
           <span>Code</span>
         </a>
@@ -53,11 +55,10 @@
 
 <section class="section teaser-section">
   <div class="container content-width">
-    <img class="main-visual" src="assets/teaser.svg" alt="GaussianOcc3D teaser">
+    <img class="main-visual" src="figures/overview.png" alt="GaussianOcc3D teaser">
     <h2 class="teaser-caption">
-      We propose a Gaussian-based camera–LiDAR fusion framework for semantic occupancy prediction,
-      performing geometry-aware lifting, discrepancy smoothing, and adaptive fusion directly in a
-      shared 3D Gaussian space.
+      Overview of GaussianOcc3D. Camera and LiDAR features are lifted into a shared Gaussian space,
+      refined through Gaussian extractors, adaptively fused, and decoded into the final 3D occupancy prediction.
     </h2>
   </div>
 </section>
@@ -98,11 +99,21 @@
     </p>
 
     <div class="figure-wrap">
-      <img src="assets/overview-placeholder.svg" alt="GaussianOcc3D method overview">
+      <img src="figures/overview.png" alt="GaussianOcc3D method overview">
       <p class="figure-caption">
-        Overview of GaussianOcc3D. Replace this placeholder with the exported figure from
-        <code>figures/overview.pdf</code>.
+        Overview of the proposed GaussianOcc3D framework.
       </p>
+    </div>
+
+    <div class="mini-fig-grid">
+      <div class="mini-fig">
+        <img src="figures/lcfa.png" alt="LDFA module figure">
+        <p class="figure-caption">LiDAR Depth Feature Aggregation (LDFA).</p>
+      </div>
+      <div class="mini-fig">
+        <img src="figures/fusion.png" alt="Adaptive camera-LiDAR fusion figure">
+        <p class="figure-caption">Adaptive Camera-LiDAR Fusion (ACLF).</p>
+      </div>
     </div>
 
     <div class="module-grid">
@@ -200,6 +211,11 @@
         </tbody>
       </table>
     </div>
+
+    <div class="figure-wrap gauss-figure">
+      <img src="figures/gauss.png" alt="Effect of Gaussian density">
+      <p class="figure-caption">Effect of Gaussian density on SurroundOcc.</p>
+    </div>
   </div>
 </section>
 
@@ -212,10 +228,9 @@
     </p>
 
     <div class="figure-wrap">
-      <img src="assets/qualitative-placeholder.svg" alt="GaussianOcc3D qualitative results">
+      <img src="figures/qual.png" alt="GaussianOcc3D qualitative results">
       <p class="figure-caption">
-        Replace this placeholder with the exported qualitative figure from
-        <code>figures/qual.pdf</code>.
+        Qualitative results on the validation set.
       </p>
     </div>
   </div>
@@ -248,10 +263,10 @@
 
     <div class="bibtex-box">
 <pre><code>@inproceedings{doruk2026gaussianocc3d,
-  title     = {GaussianOcc3D: Adaptive Multi-modal Fusion for 3D Occupancy Prediction Using Gaussians},
-  author    = {Doruk, A. Enes and Ates, Hasan F.},
-  booktitle = {European Conference on Computer Vision Workshops (ECCVW)},
-  year      = {2026}
+  title={Gaussianocc3d: A gaussian-based adaptive multi-modal 3d occupancy prediction},
+  author={Doruk, A and Ates, Hasan F},
+  journal={arXiv preprint arXiv:2601.22729},
+  year={2026}
 }</code></pre>
     </div>
 
