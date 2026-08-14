@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GaussianOcc3D</title>
+  <meta name="description" content="GaussianOcc3D: Adaptive Multi-modal Fusion for 3D Occupancy Prediction Using Gaussians">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<section class="hero">
+  <div class="container">
+    <div class="hero-body">
+      <div class="venue">ECCV 2026 · DriveX Workshop</div>
+
+      <h1 class="title">
+        <span class="gradient-text">GaussianOcc3D</span>:
+        Adaptive Multi-modal Fusion for 3D Occupancy Prediction Using Gaussians
+      </h1>
+
+      <div class="authors">
+        <a href="https://orcid.org/0000-0001-7275-0474" target="_blank">A. Enes Doruk</a><sup>1</sup>
+        <span class="author-sep">·</span>
+        <a href="https://orcid.org/0000-0002-6842-1528" target="_blank">Hasan F. Ates</a><sup>1</sup>
+      </div>
+
+      <div class="affiliation"><sup>1</sup> Ozyegin University, Istanbul, Turkiye</div>
+
+      <div class="link-block">
+        <a class="paper-btn" href="paper.pdf" target="_blank">
+          <span class="icon"><i class="fa-solid fa-file-pdf"></i></span>
+          <span>Paper</span>
+        </a>
+
+        <a class="paper-btn" href="https://github.com/USERNAME/GaussianOcc3D" target="_blank">
+          <span class="icon"><i class="fa-brands fa-github"></i></span>
+          <span>Code</span>
+        </a>
+
+        <a class="paper-btn" href="#bibtex">
+          <span class="icon"><i class="fa-solid fa-quote-right"></i></span>
+          <span>BibTeX</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section teaser-section">
+  <div class="container content-width">
+    <img class="main-visual" src="assets/teaser.svg" alt="GaussianOcc3D teaser">
+    <h2 class="teaser-caption">
+      We propose a Gaussian-based camera–LiDAR fusion framework for semantic occupancy prediction,
+      performing geometry-aware lifting, discrepancy smoothing, and adaptive fusion directly in a
+      shared 3D Gaussian space.
+    </h2>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container text-width">
+    <h2 class="section-title">Abstract</h2>
+    <div class="content">
+      <p>
+        3D semantic occupancy prediction aims to provide a dense and fine-grained understanding of
+        the surrounding environment. Multi-modal systems combine the semantic richness of cameras
+        with the geometric precision of LiDAR, but adaptively aligning these fundamentally different
+        representations remains challenging.
+      </p>
+      <p>
+        GaussianOcc3D addresses this issue by lifting camera and LiDAR features into a shared
+        continuous 3D Gaussian representation. The framework combines LiDAR Depth Feature
+        Aggregation (LDFA), Entropy-Based Feature Smoothing (EBFS), and Adaptive Camera-LiDAR
+        Fusion (ACLF) to improve geometric grounding, reduce cross-modal inconsistency, and
+        dynamically weight sensor contributions according to reliability.
+      </p>
+      <p>
+        Evaluations on SurroundOcc, Occ3D, and SemanticKITTI demonstrate strong performance across
+        all three benchmarks, reaching <b>29.3</b>, <b>49.8</b>, and <b>25.8</b> mIoU, respectively.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section alt-section">
+  <div class="container content-width">
+    <h2 class="section-title">Method</h2>
+
+    <p class="method-intro">
+      GaussianOcc3D uses 3D Gaussians as a unified representation for camera semantics and LiDAR
+      geometry. The two modalities are lifted independently, refined through Gaussian extractors,
+      smoothed before fusion, and finally combined through reliability-aware adaptive weighting.
+    </p>
+
+    <div class="figure-wrap">
+      <img src="assets/overview-placeholder.svg" alt="GaussianOcc3D method overview">
+      <p class="figure-caption">
+        Overview of GaussianOcc3D. Replace this placeholder with the exported figure from
+        <code>figures/overview.pdf</code>.
+      </p>
+    </div>
+
+    <div class="module-grid">
+      <div class="module">
+        <h3>LDFA</h3>
+        <h4>LiDAR Depth Feature Aggregation</h4>
+        <p>
+          Aggregates sparse LiDAR geometry using chunk-based vertical refinement and cross-depth
+          attention, preserving informative depth structures while reducing noise from empty regions.
+        </p>
+      </div>
+
+      <div class="module">
+        <h3>EBFS</h3>
+        <h4>Entropy-Based Feature Smoothing</h4>
+        <p>
+          Quantifies camera–LiDAR discrepancy in overlapping Gaussian representations through
+          bidirectional cross-entropy and smooths inconsistent descriptors before fusion.
+        </p>
+      </div>
+
+      <div class="module">
+        <h3>ACLF</h3>
+        <h4>Adaptive Camera-LiDAR Fusion</h4>
+        <p>
+          Uses dual-stream cross-context, soft gating, and consistency-aware reweighting to
+          dynamically select reliable camera and LiDAR evidence at the Gaussian level.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container content-width">
+    <h2 class="section-title">Quantitative Results</h2>
+
+    <p class="result-description">
+      3D semantic occupancy prediction performance across SurroundOcc, Occ3D, and SemanticKITTI.
+    </p>
+
+    <div class="result-table-wrap">
+      <table class="result-table">
+        <thead>
+          <tr>
+            <th>Benchmark</th>
+            <th>Strong Baseline</th>
+            <th>Baseline mIoU</th>
+            <th>GaussianOcc3D</th>
+            <th>Gain</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SurroundOcc</td>
+            <td>GaussianFormer3D</td>
+            <td>27.1</td>
+            <td class="ours">29.3</td>
+            <td class="gain">+2.2</td>
+          </tr>
+          <tr>
+            <td>Occ3D</td>
+            <td>OccFusion</td>
+            <td>48.7</td>
+            <td class="ours">49.8</td>
+            <td class="gain">+1.1</td>
+          </tr>
+          <tr>
+            <td>SemanticKITTI</td>
+            <td>OccMamba</td>
+            <td>24.6</td>
+            <td class="ours">25.8</td>
+            <td class="gain">+1.2</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="subsection-title">Component Ablation on SurroundOcc</h3>
+
+    <div class="result-table-wrap compact">
+      <table class="result-table">
+        <thead>
+          <tr>
+            <th>Configuration</th>
+            <th>mIoU</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Camera baseline</td><td>20.2</td></tr>
+          <tr><td>+ LiDAR</td><td>24.8</td></tr>
+          <tr><td>+ ACLF</td><td>26.5</td></tr>
+          <tr><td>+ LDFA</td><td>28.7</td></tr>
+          <tr class="highlight-row"><td><b>+ EBFS (Full GaussianOcc3D)</b></td><td><b>29.3</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section alt-section">
+  <div class="container content-width">
+    <h2 class="section-title">Qualitative Results</h2>
+
+    <p class="result-description">
+      Visualization results on the SurroundOcc validation set.
+    </p>
+
+    <div class="figure-wrap">
+      <img src="assets/qualitative-placeholder.svg" alt="GaussianOcc3D qualitative results">
+      <p class="figure-caption">
+        Replace this placeholder with the exported qualitative figure from
+        <code>figures/qual.pdf</code>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container text-width">
+    <h2 class="section-title">Efficiency</h2>
+
+    <div class="stat-row">
+      <div class="stat">
+        <span class="stat-value">68.1M</span>
+        <span class="stat-label">Parameters</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">427 ms</span>
+        <span class="stat-label">Latency</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">25,600</span>
+        <span class="stat-label">Gaussians</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt-section" id="bibtex">
+  <div class="container text-width">
+    <h2 class="section-title">BibTeX</h2>
+
+    <div class="bibtex-box">
+<pre><code>@inproceedings{doruk2026gaussianocc3d,
+  title     = {GaussianOcc3D: Adaptive Multi-modal Fusion for 3D Occupancy Prediction Using Gaussians},
+  author    = {Doruk, A. Enes and Ates, Hasan F.},
+  booktitle = {European Conference on Computer Vision Workshops (ECCVW)},
+  year      = {2026}
+}</code></pre>
+    </div>
+
+    <p class="bibtex-note">
+      Update the citation with the final proceedings metadata / DOI once it becomes available.
+    </p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container text-width">
+    <p>
+      GaussianOcc3D · ECCV 2026 DriveX Workshop
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
