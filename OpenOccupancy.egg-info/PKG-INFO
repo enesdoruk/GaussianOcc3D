@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: OpenOccupancy
+Version: 0.0
+Summary: OpenOccupancy: A Large Scale Benchmark for Surrounding Semantic Occupancy Perception
+Home-page: UNKNOWN
+Author: OpenOccupancy Contributors
+Author-email: wangxiaofeng2020@ia.ac.cn
+License: Apache License 2.0
+Keywords: Occupancy Perception
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+
+UNKNOWN
+
