@@ -1,0 +1,6 @@
+Using pip 25.3 from /home/edoruk/miniconda3/envs/thesis/lib/python3.9/site-packages/pip (python 3.9)
+Obtaining file:///home/edoruk/OccMamba/projects/occ_plugin/occupancy/dense_heads/localagg
+  Checking if build backend supports build_editable: started
+  Running command Checking if build backend supports build_editable
+  Checking if build backend supports build_editable: finished with status 'done'
+ERROR: Project file:///home/edoruk/OccMamba/projects/occ_plugin/occupancy/dense_heads/localagg uses a build backend that is missing the 'build_editable' hook, so it cannot be installed in editable mode. Consider using a build backend that supports PEP 660.
